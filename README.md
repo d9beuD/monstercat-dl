@@ -20,6 +20,11 @@ We just need the release ID, in this case: `MCEP157`.
 Download all songs in this release with this simple command:
 
 ```bash
+php monstercat-dl.php MCEP157
+```
+
+You can download more songs at once by adding other release IDs at the end of the command:
+```bash
 php monstercat-dl.php MCEP157 MCX006 MCS778
 ```
 
