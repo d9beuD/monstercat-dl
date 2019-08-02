@@ -1,4 +1,4 @@
-# monstercat-dl
+# :musical_note: monstercat-dl
 
 Download Monstercat songs from your Terminal app!
 
@@ -7,6 +7,8 @@ Download Monstercat songs from your Terminal app!
 To get monstercat-dl working correctly, you will need this:
 - [wget](https://www.gnu.org/software/wget/) (on macOS `brew install wget`)
 - [php](https://php.net) >= 7.0
+
+:warning: If you don't want to use `wget` and prefer `php` native functions, use `--without-get` argument.
 
 ## Usage
 
@@ -20,12 +22,12 @@ We just need the release ID, in this case: `MCEP157`.
 Download all songs in this release with this simple command:
 
 ```bash
-php monstercat-dl.php MCEP157
+php monstercat-dl.phar MCEP157
 ```
 
 You can download more songs at once by adding other release IDs at the end of the command:
 ```bash
-php monstercat-dl.php MCEP157 MCX006 MCS778
+php monstercat-dl.phar MCEP157 MCX006 MCS778
 ```
 
 All songs will be downloaded in your current directory, you can `cd` into another one.

@@ -51,6 +51,7 @@ $releases = array_filter(
     function ($key) { return is_numeric($key); },
     ARRAY_FILTER_USE_KEY
 );
+$blobs = [];
 
 foreach ($releases as $key => $releaseID) {
     $release = new Release($releaseID);
@@ -63,8 +64,29 @@ foreach ($releases as $key => $releaseID) {
 
         if ($album->getStatus() === 200) {
             foreach ($album->getMusics() as $music) {
-                exec("wget " . $music->getDownloadLink() . " -O \"" . $music->getFileName() . ".mp3\"");
+                $blobs[$music->getFileName()] = $music->getDownloadLink();
+                echo ' - ' . $music->getFileName() . PHP_EOL;
             }
         }
+    }
+
+    echo PHP_EOL;
+}
+
+foreach ($blobs as $name => $url) {
+    if (isset($args['without-wget'])) {
+        echo "[Downloading] `$name`... ";
+        if (
+            file_put_contents(
+                $name . '.mp3',
+                file_get_contents($url)
+            )
+        ) {
+            echo 'Ok' . PHP_EOL;
+        } else {
+            echo 'FAILED' . PHP_EOL;
+        }
+    } else {
+        exec("wget $url -O \"$name.mp3\"");
     }
 }
