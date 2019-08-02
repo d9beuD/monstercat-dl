@@ -21,6 +21,7 @@ To get monstercat-dl working correctly, you will need this:
 
 ## Installation
 
+This is only if you don't use the `.phar` file provided in the release.
 Download the source code from a [release](https://github.com/d9beuD/monstercat-dl/releases), not from master branch.
 Unzip the archive and `cd` into it.
 For correct autoloading, download [Composer composer.phar file](https://getcomposer.org/composer.phar) and paste it in the `src` directory. Now execute :
