@@ -4,6 +4,11 @@ define('APP_NAME', $argv[0]);
 define('DESCRIPTION', 'Download Monstercat songs from your Terminal app!');
 define('VERSION', '1.0.0');
 
+require_once __DIR__ . '/vendor/autoload.php';
+
+use \MonstercatDl\Monstercat\Release;
+use \MonstercatDl\Monstercat\Album;
+
 /**
  * Print this CLI usage
  */
@@ -28,21 +33,6 @@ function parseArgs($argv){
 }
 
 /**
- * Get release information
- * @param  string $key The release key on Monstercat website
- * @return Array       The release information
- */
-function getRelease(string $key): Array
-{
-    return json_decode(
-        file_get_contents(
-            "https://connect.monstercat.com/api/catalog/release/$key"
-        ),
-        true
-    );
-}
-
-/**
  * Get album information
  * @param  string $key The release ID
  * @return Array       The album information
@@ -55,24 +45,26 @@ function getAlbum(string $key): Array
     );
 }
 
-if ($argc > 1) {
-    $albums = [];
+$args = parseArgs($argv);
+$releases = array_filter(
+    $args,
+    function ($key) { return is_numeric($key); },
+    ARRAY_FILTER_USE_KEY
+);
 
-    foreach ($argv as $key => $value) {
-        if ($key > 0) {
-            $albums[] = $value;
+foreach ($releases as $key => $releaseID) {
+    $release = new Release($releaseID);
+
+    if ($release->getStatus() === 200) {
+        echo '[FOUND] ' . $release->getTitle() . ' - ' .
+        $release->getRenderedArtists() . PHP_EOL;
+
+        $album = new Album($release->getId(), $release->getTitle());
+
+        if ($album->getStatus() === 200) {
+            foreach ($album->getMusics() as $music) {
+                exec("wget " . $music->getDownloadLink() . " -O \"" . $music->getFileName() . ".mp3\"");
+            }
         }
     }
-
-    foreach ($albums as $key => $albumKey) {
-        $release = getRelease($albumKey);
-        $album = getAlbum($release['_id']);
-
-        foreach ($album['results'] as $key => $music) {
-            exec("wget https://blobcache.monstercat.com/blobs/{$music['albums']['streamHash']} -O {$music['albums']['streamHash']}.mp3");
-        }
-    }
-} else {
-    usage();
-    exit(1);
 }
