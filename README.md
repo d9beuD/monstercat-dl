@@ -10,6 +10,19 @@ To get monstercat-dl working correctly, you will need this:
 
 :warning: If you don't want to use `wget` and prefer `php` native functions, use `--without-get` argument.
 
+## Installation
+
+Download the source code from a [release](https://github.com/d9beuD/monstercat-dl/releases), not from master branch.
+Unzip the archive and `cd` into it.
+For correct autoloading, download [Composer composer.phar file](https://getcomposer.org/composer.phar) and paste it in the `src` directory. Now execute :
+
+```bash
+php composer.phar update
+```
+
+Go back to the project directory and run `php create-phar.php`;
+Two files were created. You should use `monstercat-dl.phar` as it's described in the Usage section.
+
 ## Usage
 
 First, browse [monstercat.com](https://www.monstercat.com) and find the release you wish to download.
