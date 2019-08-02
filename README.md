@@ -2,6 +2,15 @@
 
 Download Monstercat songs from your Terminal app!
 
+## Table of contents
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Other methods](#other-methods)
+  - [Option 1](#option-1)
+  - [Option 2](#option-2)
+
 ## Requirements
 
 To get monstercat-dl working correctly, you will need this:
