@@ -18,86 +18,11 @@
 </head>
 
 <body class="bg-light d-flex flex-column">
-  <nav class="navbar navbar-light navbar-expand-md bg-white">
-    <div class="container">
-      <a class="navbar-brand font-weight-bold" href="{{ site.baseurl }}/">
-        <i class="fad fa-music"></i> monstercat-dl
-      </a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/">
-              <i class="fad fa-home"></i> Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/docs/getting-started">
-              <i class="fad fa-download"></i> Docs
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/d9beuD/monstercat-dl">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  {% include navbar.html %}
   <div class="container py-4" id="content">
     {{ content }}
   </div>
-  <footer class="bg-white">
-    <div class="container py-1">
-      <div class="row">
-        <div class="col-auto">
-          <h5 class="font-weight-bold">Links</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="{{ site.url }}/{{ site.repository }}">
-                <i class="fab fa-fw fa-github"></i> GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/d9beuD/monstercat-dl/releases">
-                <i class="fad fa-fw fa-tags"></i> Releases
-              </a>
-            </li>
-            <li>
-              <a href="https://monstercat.com">
-                <i class="fad fa-fw fa-headphones"></i> Monstercat
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-auto">
-          <h5 class="font-weight-bold">Developed with</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#">
-                <i class="fad fa-fw fa-hands-heart"></i> Love
-              </a>
-            </li>
-            <li>
-              <a href="https://php.net">
-                <i class="fab fa-fw fa-php"></i> PHP
-              </a>
-            </li>
-            <li>
-              <a href="https://getbootstrap.com">
-                <i class="fab fa-fw fa-bootstrap"></i> Bootstrap
-              </a>
-            </li>
-            <li>
-              <a href="https://fontawesome.com">
-                <i class="fab fa-fw fa-font-awesome"></i> Font Awesome
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  {% include footer.html %}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
