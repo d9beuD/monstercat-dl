@@ -8,7 +8,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/monstercat-dl.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/monstercat-dl.css">
 
   <!-- Add icons to the page -->
   <script src="https://kit.fontawesome.com/3d335203c6.js"></script>
@@ -20,19 +20,19 @@
 <body class="bg-light d-flex flex-column">
   <nav class="navbar navbar-light navbar-expand-md bg-white">
     <div class="container">
-      <a class="navbar-brand font-weight-bold" href="/pages">
+      <a class="navbar-brand font-weight-bold" href="{{ site.baseurl }}/">
         <i class="fad fa-music"></i> monstercat-dl
       </a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ site.baseurl }}/">
               <i class="fad fa-home"></i> Home
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fad fa-download"></i> Howto
+            <a class="nav-link" href="{{ site.baseurl }}/docs/getting-started">
+              <i class="fad fa-download"></i> Docs
             </a>
           </li>
           <li class="nav-item">
@@ -54,7 +54,7 @@
           <h5 class="font-weight-bold">Links</h5>
           <ul class="list-unstyled">
             <li>
-              <a href="https://github.com/d9beuD/monstercat-dl">
+              <a href="{{ site.url }}/{{ site.repository }}">
                 <i class="fab fa-fw fa-github"></i> GitHub
               </a>
             </li>
