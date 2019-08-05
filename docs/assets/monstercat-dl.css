@@ -5,3 +5,9 @@ html, body {
 #content {
   flex: 1 1 auto;
 }
+
+pre {
+  background-color: var(--dark);
+  color: var(--white);
+  border-radius: .5rem;
+}

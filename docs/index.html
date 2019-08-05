@@ -14,15 +14,28 @@
   </div>
 </div>
 <p class="text-center text-muted mb-1">Choose the way you want to use it | Currently v{{ site.params.current_version }}</p>
-<div class="row justify-content-center">
+<div class="row justify-content-center text-center mb-5">
   <div class="col-auto mb-1">
-    <a href="{{ site.params.download.source }}" class="btn btn-primary rounded-pill">
+    <a href="{{ site.params.download.source }}" class="btn btn-lg btn-secondary rounded-pill">
       <i class="fad fa-lg fa-file-code"></i> Source code
     </a>
+    <div>
+        <small class="text-muted">You will compile yourself</small>
+    </div>
   </div>
   <div class="col-auto mb-1">
-    <a href="{{ site.params.download.phar }}" class="btn btn-primary rounded-pill">
+    <a href="{{ site.params.download.phar }}" class="btn btn-lg btn-primary rounded-pill">
       <i class="fad fa-lg fa-file-download"></i> Executable PHP archive
     </a>
+    <div>
+        <small class="text-muted">Recommanded</small>
+    </div>
   </div>
+</div>
+<hr class="mb-5">
+<h3>One simple command</h3>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <img src="{{ site.images }}/home-terminal-demo.png" class="img-fluid shadow-lg bg-light">
+    </div>
 </div>

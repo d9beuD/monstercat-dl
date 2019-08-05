@@ -18,6 +18,8 @@ params:
     source: "https://github.com/d9beuD/monstercat-dl/archive/v1.0.1.zip"
     phar: "https://github.com/d9beuD/monstercat-dl/releases/download/v1.0.1/monstercat-dl.phar"
 
+images: "/monstercat-dl/assets/images"
+
 # Build settings
 markdown: kramdown
 
