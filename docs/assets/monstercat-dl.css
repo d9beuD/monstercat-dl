@@ -8,6 +8,20 @@ html, body {
 
 pre {
   background-color: var(--dark);
+  border-left: .25rem solid var(--gray);
   color: var(--white);
   border-radius: .5rem;
+  padding: .5rem 1rem;
+}
+
+blockquote {
+  background-color: var(--white);
+  border: .1rem solid var(--gray);
+  border-left: .25rem solid var(--gray);
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+}
+
+blockquote p {
+  margin-bottom: 0;
 }
