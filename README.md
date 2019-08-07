@@ -1,6 +1,6 @@
 # :musical_note: monstercat-dl
 
-Download Monstercat songs from your Terminal app!
+Download Monstercat songs from your Terminal app! All the documentation you need is on the [monstercat-dl website](https://d9beuD.github.io/monstercat-dl).
 
 ## Table of contents
 
@@ -21,39 +21,11 @@ To get monstercat-dl working correctly, you will need this:
 
 ## Installation
 
-This is only if you don't use the `.phar` file provided in the release.
-Download the source code from a [release](https://github.com/d9beuD/monstercat-dl/releases), not from master branch.
-Unzip the archive and `cd` into it.
-For correct autoloading, download [Composer composer.phar file](https://getcomposer.org/composer.phar) and paste it in the `src` directory. Now execute :
-
-```bash
-php composer.phar update
-```
-
-Go back to the project directory and run `php create-phar.php`;
-Two files were created. You should use `monstercat-dl.phar` as it's described in the Usage section.
+Read [installation](https://d9beuD.github.io/monstercat-dl/docs/v1.0/install.html) docs.
 
 ## Usage
 
-First, browse [monstercat.com](https://www.monstercat.com) and find the release you wish to download.
-
-```
-https://www.monstercat.com/release/MCEP157
-```
-
-We just need the release ID, in this case: `MCEP157`.
-Download all songs in this release with this simple command:
-
-```bash
-php monstercat-dl.phar MCEP157
-```
-
-You can download more songs at once by adding other release IDs at the end of the command:
-```bash
-php monstercat-dl.phar MCEP157 MCX006 MCS778
-```
-
-All songs will be downloaded in your current directory, you can `cd` into another one.
+Read [usage](https://d9beuD.github.io/monstercat-dl/docs/v1.0/usage.html) docs.
 
 ## Other methods
 
