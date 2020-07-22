@@ -29,5 +29,6 @@ end
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
 
-# Update nokogiri to fix vulnerability
+# Updates to fix vulnerabilites
 gem "nokogiri", ">= 1.10.8"
+gem "rubyzip", ">= 1.3.0"
