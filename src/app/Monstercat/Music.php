@@ -6,15 +6,15 @@ class Music
 {
     private $title;
     private $artist;
-    private $album;
-    private $hash;
+    private $releaseId;
+    private $trackId;
 
-    public function __construct(string $title, string $artist, string $album, string $hash)
+    public function __construct(string $title, string $artist, string $releaseId, string $trackId)
     {
         $this->title = $title;
         $this->artist = $artist;
-        $this->album = $album;
-        $this->hash = $hash;
+        $this->releaseId = $releaseId;
+        $this->trackId = $trackId;
     }
 
     /**
@@ -32,6 +32,6 @@ class Music
      */
     public function getDownloadLink(): string
     {
-        return "https://blobcache.monstercat.com/blobs/$this->hash";
+        return "https://connect.monstercat.com/v2/release/$this->releaseId/track-stream/$this->trackId";
     }
 }

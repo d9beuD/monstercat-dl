@@ -60,13 +60,11 @@ foreach ($releases as $key => $releaseID) {
         echo '[FOUND] ' . $release->getTitle() . ' - ' .
         $release->getRenderedArtists() . PHP_EOL;
 
-        $album = new Album($release->getId(), $release->getTitle());
+        $tracks = $release->getTracks();
 
-        if ($album->getStatus() === 200) {
-            foreach ($album->getMusics() as $music) {
-                $blobs[$music->getFileName()] = $music->getDownloadLink();
-                echo ' - ' . $music->getFileName() . PHP_EOL;
-            }
+        foreach ($tracks as $track) {
+            $blobs[$track->getFileName()] = $track->getDownloadLink();
+            echo ' - ' . $track->getFileName() . PHP_EOL;
         }
     }
 

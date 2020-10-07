@@ -10,15 +10,25 @@ class Release
     private $title;
     private $renderedArtists;
     private $status;
+    private $tracks = [];
 
     public function __construct(string $catalogId)
     {
         $data = $this->getInfo($catalogId);
 
         if (sizeof($data) > 0) {
-            $this->id = $data['_id'];
-            $this->title = $data['title'];
-            $this->renderedArtists = $data['renderedArtists'];
+            $this->id = $data['release']['id'];
+            $this->title = $data['release']['title'];
+            $this->renderedArtists = $data['release']['artistsTitle'];
+
+            foreach ($data['tracks'] as $track) {
+                $this->tracks[] = new Music(
+                    $track['title'],
+                    $track['artistsTitle'],
+                    $data['release']['id'],
+                    $track['id']
+                );
+            }
         } else {
             echo "Error while gettin $catalogId information: code ${$this->status}" . PHP_EOL;
         }
@@ -32,7 +42,7 @@ class Release
     {
         $url = new Url();
         $result = json_decode(
-            $url->get("https://connect.monstercat.com/api/catalog/release/$catalogId"),
+            $url->get("https://connect.monstercat.com/v2/catalog/release/$catalogId"),
             true
         );
 
@@ -52,6 +62,14 @@ class Release
     public function getId(): string
     {
         return $this->id;
+    }
+
+    /**
+     * Return found tracks
+     */
+    public function getTracks(): array
+    {
+        return $this->tracks;
     }
 
     /**
