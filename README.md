@@ -14,7 +14,7 @@ Download Monstercat songs from your Terminal app! All the documentation you need
 ## Requirements
 
 To get monstercat-dl working correctly, you will need this:
-- [wget](https://www.gnu.org/software/wget/) (on macOS `brew install wget`)
+- [wget](https://www.gnu.org/software/wget/) (on macOS `brew install wget`)\[optional, see warning below]
 - [php](https://php.net) >= 7.0
 
 :warning: If you don't want to use `wget` and prefer `php` native functions, use `--without-get` argument.
@@ -27,7 +27,7 @@ Read [installation](https://d9beuD.github.io/monstercat-dl/docs/v1.0/install.htm
 
 Read [usage](https://d9beuD.github.io/monstercat-dl/docs/v1.0/usage.html) docs.
 
-## Other methods
+## Other (manual) methods
 
 If you're not familiar with the command line, you can do it manualy on [monstercat.com](https://www.monstercat.com) by two ways:
 
