@@ -11,14 +11,19 @@ if (file_exists($pharFile . '.gz')) {
 }
 
 // Create phar
-$p = new Phar($pharFile);
+$p = new Phar($pharFile, 0, 'monstercat-dl.phar');
+$p->setSignatureAlgorithm(\Phar::SHA1);
+$p->startBuffering();
 
 // Creating our library using whole directory
 $p->buildFromDirectory('src/');
 
-// Pointing main file which requires all classes
-$p->setDefaultStub('monstercat-dl.php', '/monstercat-dl.php');
+// Create default stub
+$defaultStub = $p->createDefaultStub('monstercat-dl.php');
+$stub = "#!/usr/bin/env php\n" . $defaultStub;
+$p->setStub($stub);
 
+$p->stopBuffering();
 // Plus - compressing it into gzip
 $p->compress(Phar::GZ);
 
