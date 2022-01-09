@@ -86,7 +86,8 @@ class DownloadCommand extends Command
         $progress->display();
 
         // Create the directory if it doesn't exist
-        $directory = 'Monstercat' . DIRECTORY_SEPARATOR . $release->getArtistsTitle();
+        $directory = getcwd() . DIRECTORY_SEPARATOR . 'Monstercat';
+        $directory .= DIRECTORY_SEPARATOR . $release->getArtistsTitle();
         $directory .= DIRECTORY_SEPARATOR . $release->getTitle();
 
         if (!is_dir($directory)) {
