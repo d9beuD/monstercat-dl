@@ -1,6 +1,6 @@
 # :musical_note: monstercat-dl
 
-Download Monstercat songs from your Terminal app! All the documentation you need is on the [monstercat-dl website](https://d9beuD.github.io/monstercat-dl).
+Download Monstercat songs from your Terminal app! All the documentation you need is on the [monstercat-dl website](https://d9beud.com/monstercat-dl/). This tool isn't affiliated with Monstercat.
 
 ## Table of contents
 
@@ -14,18 +14,41 @@ Download Monstercat songs from your Terminal app! All the documentation you need
 ## Requirements
 
 To get monstercat-dl working correctly, you will need this:
-- [wget](https://www.gnu.org/software/wget/) (on macOS `brew install wget`)\[optional, see warning below]
 - [php](https://php.net) >= 7.0
-
-:warning: If you don't want to use `wget` and prefer `php` native functions, use `--without-get` argument.
 
 ## Installation
 
-Read [installation](https://d9beuD.github.io/monstercat-dl/docs/v1.0/install.html) docs.
+For UNIX systems users (macOS and Linux), clone this repository and follow those steps:
+
+1. `git clone https://github.com/d9beuD/monstercat-dl.git`
+2. `cd monstercat-dl`
+
+Then you need to install the project's dependencies:
+
+1. `composer install` (if you don't have [Composer](https://getcomposer.org) installed, read its [installation docs](https://getcomposer.org/doc/00-intro.md))
+
+Finally, create the executable:
+
+1. `php create-phar.php`
+2. `bash install.sh`
+
+If you don't want to install this tool, you can still use the `.phar` file like so `php monstercat-dl.phar`.
 
 ## Usage
 
-Read [usage](https://d9beuD.github.io/monstercat-dl/docs/v1.0/usage.html) docs.
+### Download tracks
+
+Using this command is pretty simple as it doesn't need any option. All you have to do is to find the release ID at the end of the release page URL.
+
+```
+monstercat-dl download <releases>...
+```
+
+For example, if you want to download `https://www.monstercat.com/release/MCLP016` and `https://www.monstercat.com/release/MCEP215` write your command as below:
+
+```
+monstercat-dl download MCLP016 MCEP215
+```
 
 ## Other (manual) methods
 
