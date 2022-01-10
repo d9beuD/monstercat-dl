@@ -1,0 +1,11 @@
+{
+    "require": {
+        "symfony/console": "^6.0",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MonstercatDl\\": "src/"
+        }
+    }
+}

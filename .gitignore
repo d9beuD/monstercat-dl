@@ -1,5 +1,4 @@
-
-/src/vendor/
+vendor/
 monstercat-dl.phar
 monstercat-dl.phar.gz
 .DS_Store

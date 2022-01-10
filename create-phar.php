@@ -16,7 +16,7 @@ $p->setSignatureAlgorithm(\Phar::SHA1);
 $p->startBuffering();
 
 // Creating our library using whole directory
-$p->buildFromDirectory('src/');
+$p->buildFromDirectory('./');
 
 // Create default stub
 $defaultStub = $p->createDefaultStub('monstercat-dl.php');
