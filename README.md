@@ -2,6 +2,8 @@
 
 Download Monstercat songs from your Terminal app! All the documentation you need is on the [monstercat-dl website](https://d9beud.com/monstercat-dl/). This tool isn't affiliated with Monstercat.
 
+⚠️ This app allows you to download the free streaming audio file provided by Monstercat. This is not the high quality file you can access by subscribing to Monstercat Gold. If you realy like Monstercat songs, please consider subscribing. 
+
 ## Table of contents
 
 - [Requirements](#requirements)
